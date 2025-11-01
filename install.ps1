@@ -54,28 +54,28 @@ Write-Host "Windows 11 not detected. Skipping Win11 extras."
 # ---------------------------------------------------------------
 
 $packages = @(
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.GamingApp_2403.1001.2.0_neutral_._8wekyb3d8bbwe.Msixbundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Framework.1.7_1.7.27413.0_x64__8wekyb3d8bbwe.Appx",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.Appx]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Runtime.1.7_1.7.27422.0_x64__8wekyb3d8bbwe.Appx]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.Appx]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.ScreenSketch_2022.2508.29.0_neutral_._8wekyb3d8bbwe.Msixbundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe.Appx]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.UI.Xaml.2.8_8.2310.30001.0_x64__8wekyb3d8bbwe.Appx]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.Windows.Photos_2020.20120.4004.0_neutral_._8wekyb3d8bbwe.AppxBundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsAlarms_2022.2304.0.0_neutral_._8wekyb3d8bbwe.Msixbundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsAppRuntime.1.5_5001.373.1736.0_x86__8wekyb3d8bbwe.Msix]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsCalculator_2021.2502.2.0_neutral_._8wekyb3d8bbwe.Msixbundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsCamera_2021.105.10.0_neutral_._8wekyb3d8bbwe.AppxBundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsStore_12107.1001.15.0_neutral_._8wekyb3d8bbwe.AppxBundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsTerminal_3001.22.11141.0_neutral_._8wekyb3d8bbwe.Msixbundle]")
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.GamingApp_2403.1001.2.0_neutral_._8wekyb3d8bbwe.Msixbundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Framework.1.7_1.7.27413.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Runtime.1.7_1.7.27422.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.ScreenSketch_2022.2508.29.0_neutral_._8wekyb3d8bbwe.Msixbundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.UI.Xaml.2.8_8.2310.30001.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.Windows.Photos_2020.20120.4004.0_neutral_._8wekyb3d8bbwe.AppxBundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsAlarms_2022.2304.0.0_neutral_._8wekyb3d8bbwe.Msixbundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsAppRuntime.1.5_5001.373.1736.0_x86__8wekyb3d8bbwe.Msix",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsCalculator_2021.2502.2.0_neutral_._8wekyb3d8bbwe.Msixbundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsCamera_2021.105.10.0_neutral_._8wekyb3d8bbwe.AppxBundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsStore_12107.1001.15.0_neutral_._8wekyb3d8bbwe.AppxBundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsTerminal_3001.22.11141.0_neutral_._8wekyb3d8bbwe.Msixbundle")
 
 $win11Extras = @(
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.ScreenSketch_2022.2508.29.0_neutral_._8wekyb3d8bbwe.Msixbundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsCalculator_2021.2502.2.0_neutral_._8wekyb3d8bbwe.Msixbundle]",
-"[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsNotepad_11.2503.16.0_neutral_._8wekyb3d8bbwe.Msixbundle]")
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.ScreenSketch_2022.2508.29.0_neutral_._8wekyb3d8bbwe.Msixbundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsCalculator_2021.2502.2.0_neutral_._8wekyb3d8bbwe.Msixbundle",
+"https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsNotepad_11.2503.16.0_neutral_._8wekyb3d8bbwe.Msixbundle")
 
 # Combine packages conditionally
 $allPackages = $packages

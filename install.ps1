@@ -109,13 +109,16 @@ $allPackages += $win11Extras
 
 # ---------------------------------------------------------------
 
-# Download and install all packages
+# Install packages in order
 
 # ---------------------------------------------------------------
-
-foreach ($pkgUrl in $allPackages) {
-$pkgPath = Download-App $pkgUrl
+foreach ($pkgPath in $downloadedPackages) {
+try {
 Install-Package $pkgPath
+} catch {
+# Fixed Write-Warning using string formatting
+Write-Warning ("Failed to install {0}: {1}" -f $pkgPath, $_.Exception.Message)
+}
 }
 
 Write-Host "All packages have been processed."

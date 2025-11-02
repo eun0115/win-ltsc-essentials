@@ -96,7 +96,7 @@ foreach ($pkgPath in $downloadedPackages) {
     try {
         Install-Package $pkgPath
     } catch {
-        Write-Warning "Failed to install $pkgPath: ${_}"
+        Write-Warning ("Failed to install {0}: {1}" -f $pkgPath, $_)
     }
 }
 

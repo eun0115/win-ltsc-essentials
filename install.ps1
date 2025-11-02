@@ -1,7 +1,11 @@
 # ===============================================================
-# LTSC Essentials Installer - Fixed PowerShell Version
+
+# Win-LTSC Essentials Installer - PowerShell Version (Fixed)
+
 # ===============================================================
+
 # Ensure running as administrator
+
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
 Write-Host "This script requires administrator privileges. Restarting as admin..."
 Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
@@ -9,13 +13,17 @@ exit
 }
 
 # Create temporary working directory
+
 $tempDir = Join-Path $env:TEMP "AppInstallerTemp"
 if (-not (Test-Path $tempDir)) { New-Item -ItemType Directory -Path $tempDir | Out-Null }
 Write-Host "Using temporary folder: $tempDir"
 
 # ---------------------------------------------------------------
-# Downloading package
+
+# Function to download package
+
 # ---------------------------------------------------------------
+
 function Download-App {
 param([string]$Url)
 $fileName = Split-Path $Url -Leaf
@@ -30,28 +38,40 @@ return $dest
 }
 
 # ---------------------------------------------------------------
-# Installing package
+
+# Function to install package
+
 # ---------------------------------------------------------------
+
 function Install-Package {
 param([string]$Path)
 Write-Host "Installing $Path..."
+try {
 Add-AppxPackage -Path $Path -ErrorAction Stop
+} catch {
+Write-Warning "Failed to install $Path: $($_.Exception.Message)"
+}
 }
 
 # ---------------------------------------------------------------
-# Windows Detection
+
+# Detect Windows 11
+
 # ---------------------------------------------------------------
+
 $osVersion = [System.Environment]::OSVersion.Version
 $isWin11 = $false
 if ($osVersion.Major -eq 10 -and $osVersion.Build -ge 22000) {
 $isWin11 = $true
 Write-Host "Windows 11 detected."
 } else {
-Write-Host "Skipping Windows 11 extras."
+Write-Host "Windows 10 detected."
 }
 
 # ---------------------------------------------------------------
+
 # Define required packages
+
 # ---------------------------------------------------------------
 
 $packages = @(
@@ -80,27 +100,22 @@ $win11Extras = @(
 "[https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsNotepad_11.2503.16.0_neutral_._8wekyb3d8bbwe.Msixbundle](https://github.com/eun0115/win-ltsc-essentials/releases/download/1.0/Microsoft.WindowsNotepad_11.2503.16.0_neutral_._8wekyb3d8bbwe.Msixbundle)"
 )
 
+# Combine packages based on OS
+
 $allPackages = $packages
-if ($isWin11) { $allPackages += $win11Extras }
+if ($isWin11) {
+$allPackages += $win11Extras
+}
 
 # ---------------------------------------------------------------
-# Download all packages
+
+# Download and install all packages
+
 # ---------------------------------------------------------------
-$downloadedPackages = @()
+
 foreach ($pkgUrl in $allPackages) {
-$downloadedPackages += Download-App $pkgUrl
-}
-
-# ---------------------------------------------------------------
-# Install packages in order
-# ---------------------------------------------------------------
-foreach ($pkgPath in $downloadedPackages) {
-try {
+$pkgPath = Download-App $pkgUrl
 Install-Package $pkgPath
-} catch {
-# Fixed Write-Warning using string formatting
-Write-Warning ("Failed to install {0}: {1}" -f $pkgPath, $_.Exception.Message)
-}
 }
 
 Write-Host "All packages have been processed."

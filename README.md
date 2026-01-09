@@ -5,40 +5,22 @@ LTSC Essentials is a PowerShell-based utility for installing core apps on Window
 
 ## 💡 Prerequisites
 
-* Windows 10 or 11 LTSC
-* Admin privileges
+* Windows LTSC 10 or 11
+* Fully updated Windows (Settings > Windows Update)
 
 ---
 
-#### Start Menu Method
+## 🛠 Installation
 
-1. Right-click on the **Start Menu**.
-2. Select **Windows PowerShell (Admin)** (Windows 10) or **Terminal (Admin)** (Windows 11).
-3. Accept the UAC prompt.
+1. Go to https://github.com/eun0115/win-ltsc-essentials > Click "Code" and select Download ZIP (skip if downloaded)
+2. Extract the file
+3. Double click the "install.bat" and it will attempt to grant admin permissions
 
-#### Search and Launch Method
-
-1. Press the **Windows key**.
-2. Type **PowerShell** (Windows 10) or **Terminal** (Windows 11).
-3. Press **Ctrl + Shift + Enter**, or right-click and select **Run as administrator**.
-4. Accept the UAC prompt.
-
----
-
-### Run Winutil
-
-```powershell
-irm "https://raw.githubusercontent.com/eun0115/win-ltsc-essentials/refs/heads/main/install.ps1" | iex
-```
-
----
-
-## 🛠 Features
+## ✨ Features
 
 * Installs essential apps for Windows LTSC
 * Adds Windows 11 extras if detected
 * Handles dependencies like .NET Native frameworks
-* Stores temporary files in `%TEMP%` during execution
 * Installs apps using `Add-AppxPackage` and MSIX bundles
 
 ---

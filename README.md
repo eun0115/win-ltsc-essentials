@@ -22,7 +22,7 @@ LTSC Essentials is a PowerShell-based utility for installing core apps on Window
 * Adds Windows 11 extras if detected
 * Handles dependencies like .NET Native frameworks
 * Installs apps using `Add-AppxPackage` and MSIX bundles
-* Massgrave Windows Activation
+* Massgrave Windows Activation (press 3 then 5)
 * Visual C++ Included
 * Minor Powerplan Tweaks for Laptop/Windows Tablets
 

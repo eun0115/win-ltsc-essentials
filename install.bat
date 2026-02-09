@@ -19,6 +19,7 @@ for /f %%i in ('powershell -Command "[System.Environment]::OSVersion.Version.Bui
 echo Installing Native Runtime...
 powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.NET.Native.Runtime.1.7_1.7.27422.0_x64__8wekyb3d8bbwe.Appx'"
 powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.Appx'"
+powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.WindowsAppRuntime.1.5_5001.373.1736.0_x64__8wekyb3d8bbwe.Msix'"
 
 echo Installing Xaml libraries...
 powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.UI.Xaml.2.4_2.42007.9001.0_x64__8wekyb3d8bbwe.Appx'"
@@ -38,7 +39,6 @@ powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.Windows.Photo
 powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.GamingApp_2403.1001.2.0_neutral_~_8wekyb3d8bbwe.Msixbundle'"
 powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.WindowsStore_12107.1001.15.0_neutral_~_8wekyb3d8bbwe.AppxBundle'"
 powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.WindowsAlarms_2022.2304.0.0_neutral_~_8wekyb3d8bbwe.Msixbundle'"
-powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.WindowsAppRuntime.1.5_5001.373.1736.0_x86__8wekyb3d8bbwe.Msix'"
 powershell -Command "Add-AppxPackage -Path '%currentDir%\Microsoft.WindowsTerminal_3001.22.11141.0_neutral_~_8wekyb3d8bbwe.Msixbundle'"
 
 :: If Windows 11 (Build 22000+), remove legacy apps and install modern ones

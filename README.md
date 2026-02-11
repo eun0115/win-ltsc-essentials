@@ -12,7 +12,7 @@ LTSC Essentials is a PowerShell-based utility for installing core apps on Window
 
 ## 🛠 Installation
 
-1. Go to https://github.com/eun0115/win-ltsc-essentials > Click "Code" and select Download ZIP (skip if downloaded)
+1. Go to https://github.com/eun0115/win-ltsc-essentials/releases/ (skip if downloaded)
 2. Extract the file
 3. Double click the "install.bat" and it will attempt to grant admin permissions
 
